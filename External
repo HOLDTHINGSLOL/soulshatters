@@ -38,7 +38,7 @@ game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Idle.AnimationId = "rbxassetid://4725460334"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Jump.AnimationId = "rbxassetid://4693979593"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Fall.AnimationId = "rbxassetid://4690344191"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light1.AnimationId = "rbxassetid://5776230796"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves"):WaitForChild("ModuleScript").Animations.BladesCombat.Light1.AnimationId = "rbxassetid://5776230796"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light2.AnimationId = "rbxassetid://4800436094"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light3.AnimationId = "rbxassetid://4348323561"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light4.AnimationId = "rbxassetid://5657143572"
@@ -538,7 +538,7 @@ local part = PName -- dont change this either
             Enum.EasingDirection.InOut,       --Easing Direction
             -1,                             --Times Repeated
             true,                           --reversed
-            0                               --deÅŸau
+            0                               --deşau
             )
             
         local Goals = {
@@ -4337,7 +4337,13 @@ RageActived100 = true
     game.Players.LocalPlayer.Backpack.Main.RunSpeed.Value = 0
     game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value = 0
     game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
-    char.Torso.Anchored = true
+    
+    
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
+    
+
+    
     wait(1)
     local A_1 =  {
         [1] = getrenv()._G.Pass, 
@@ -4456,9 +4462,13 @@ for _,v in pairs(game:GetService("ReplicatedStorage").Resources.LocalScripts:Get
         Aura2.Transparency = 1
         end
         end
-char.Torso.Anchored = false
+
 game.Players.LocalPlayer.Backpack.Main.RunSpeed.Value = 150
 game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value = 10
+
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 16
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = 75
+
 RageMode = true
 Music:Play()
 InAction = false
@@ -4813,9 +4823,11 @@ coroutine.resume(coroutine.create(function()
     local Event = game:GetService("ReplicatedStorage").Remotes.Events
     Event:FireServer(A_1) 
         while wait(1) do
+        pcall(function()
             for i, v in pairs(game.Players:GetChildren()) do
                 v.Character.Humanoid.Health = math.huge
             end
+            end)
         end
     end))
 
