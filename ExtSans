@@ -22,7 +22,7 @@ end
 
 --//Spawn\\--
 
-task.wait(0.3)
+
 game.Players.LocalPlayer.Character:WaitForChild("Head"):WaitForChild("HealthBar").Frame.PName:Destroy()
 
 
