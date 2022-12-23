@@ -907,7 +907,7 @@ end)
 end))
 
 
---Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
+Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
 
 
 coroutine.resume(coroutine.create(function()
@@ -928,16 +928,6 @@ coroutine.resume(coroutine.create(function()
             end
         end))
 
-spawn(function()
-while wait() do
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-if v.Name == "LockOn" then
-local weld = v:FindFirstChild("Weld")
-if weld then weld:Destroy() end
-end
-end
-end
-end)
 
 
 local A_1 = {
