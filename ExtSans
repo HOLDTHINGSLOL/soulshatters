@@ -19,11 +19,9 @@ game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"Change
 end
 
 
+wait(0.5)
 
---//Spawn\\--
-
-
-game.Players.LocalPlayer.Character:WaitForChild("Head"):WaitForChild("HealthBar").Frame.PName:Destroy()
+game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
 
 
 
