@@ -1,4 +1,8 @@
+getgenv().Morph = true
+getgenv().Visualizer = true
 
+
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
 
 if getgenv().Morph == true then
 	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
@@ -14,9 +18,9 @@ game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
 --//Invencible\\
 game.Players.LocalPlayer.Character:WaitForChild("ForceField"):Destroy()
 local v1 = {
-	[1] = getrenv()._G.Pass, 
-	[2] = "Damage", 
-	[3] = math.huge, 
+	[1] = getrenv()._G.Pass,
+	[2] = "Damage",
+	[3] = math.huge,
 	[4] = game.Players.LocalPlayer.Character
 }
 local event = game:GetService("ReplicatedStorage").Remotes.Events
@@ -33,7 +37,7 @@ end)
 
 
 --//Animations\\
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves"):WaitForChild("Animations").Run.AnimationId = "rbxassetid://4370518984"   
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves"):WaitForChild("Animations").Run.AnimationId = "rbxassetid://4370518984"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Walk.AnimationId = "rbxassetid://4725536420"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Idle.AnimationId = "rbxassetid://4725460334"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Jump.AnimationId = "rbxassetid://4693979593"
@@ -142,7 +146,7 @@ game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value = 10
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Destroy()
 
 
-                
+
       local char = game.Players.LocalPlayer.Character
 spawn(function()
     repeat wait()
@@ -241,25 +245,18 @@ if plr.Character then
 end
 
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/sixhackre/scriptslol/main/somethinglel')))()
-locktry = 0
-lockbreak = false
-coroutine.resume(coroutine.create(function()
-while lockbreak == false do wait()
-for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-local LockShit = v:FindFirstChild("LockOn")
-  if v.Name == "LockOn" then
-     v:Destroy()
-  end
-  if v.Name ~= "LockOn" then
-  locktry = locktry + 1
-   wait(1)
-end
-if locktry == 20 then
-  lockbreak = true
+
+spawn(function()
+while wait() do
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "LockOn" then
+local weld = v:FindFirstChild("Weld")
+if weld then weld:Destroy() end
 end
 end
 end
-end))
+end)
+
 
 
 local function SendWarn(title,text,time)
@@ -271,32 +268,32 @@ local function SendWarn(title,text,time)
 end
 
 local sitstart = Instance.new("Animation")
-sitstart.AnimationId = "rbxassetid://6821079045" 
+sitstart.AnimationId = "rbxassetid://6821079045"
 local sitstartplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitstart)
-local sitloop = Instance.new("Animation") 
---sitloop.AnimationId = "rbxassetid://6821100086" 
+local sitloop = Instance.new("Animation")
+--sitloop.AnimationId = "rbxassetid://6821100086"
 sitloop.AnimationId = "rbxassetid://7507481748"
 local sitloopplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitloop)
-local sitend = Instance.new("Animation") 
+local sitend = Instance.new("Animation")
 sitend.AnimationId = "rbxassetid://6821115515"
-local sitendplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitend) 
-local sitting = false 
+local sitendplay = game.Players.LocalPlayer.Character:FindFirstChild("Humanoid"):LoadAnimation(sitend)
+local sitting = false
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:Connect(function(k, typing)
     if typing then return end
 	if k == "g" and InAction == false then
 	if sitting == false then
-        sitstartplay:Play() 
+        sitstartplay:Play()
         wait(1)
         sitloopplay:Play()
         game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
                 sitting = true
                 	 char.Torso.Anchored = true
         wait(1)
-        else 
+        else
         sitting = false
         char.Torso.Anchored = false
-        sitloopplay:Stop() 
+        sitloopplay:Stop()
         sitendplay:Play()
        end
        end
@@ -306,7 +303,7 @@ end)
         local function getlockchar()
             local char = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
             return char
-        end 
+        end
 
 
 local runS = game:GetService("RunService")
@@ -394,7 +391,7 @@ Lock1.TextWrapped = true
 
 Lock1.Text = "Lock: "..tostring(game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value)
 game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Changed:Connect(function()
-Lock1.Text = "Lock: "..tostring(game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value) 
+Lock1.Text = "Lock: "..tostring(game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value)
 end)
 
 UIGradient_2.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(255, 255, 255)), ColorSequenceKeypoint.new(0.50, Color3.fromRGB(148, 148, 148)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 255, 255))}
@@ -402,20 +399,20 @@ UIGradient_2.Parent = Lock1
 
 -- Scripts:
 
-local function LFFBH_fake_script() -- Rage.Anim 
+local function LFFBH_fake_script() -- Rage.Anim
 	local script = Instance.new('LocalScript', RageText)
 
 	--//VARIABLES:
 	local button = script.Parent
 	local gradient = button.UIGradient
-	local ts = game:GetService("TweenService") 
+	local ts = game:GetService("TweenService")
 	local ti = TweenInfo.new(1, Enum.EasingStyle.Circular, Enum.EasingDirection.Out)
 	local offset1 = {Offset = Vector2.new(1, 0)}
 	local create = ts:Create(gradient, ti, offset1)
-	local startingPos = Vector2.new(-1, 0) 
+	local startingPos = Vector2.new(-1, 0)
 	local addWait = 0
-	
-	
+
+
 	--//ANIMATIONS:
 	local function animate()
 		create:Play()
@@ -430,20 +427,20 @@ local function LFFBH_fake_script() -- Rage.Anim
 	animate() -- calls the all funcions!!
 end
 coroutine.wrap(LFFBH_fake_script)()
-local function FTNW_fake_script() -- Lock.Anim 
+local function FTNW_fake_script() -- Lock.Anim
 	local script = Instance.new('LocalScript', Lock1)
 
 	--//VARIABLES:
 	local button = script.Parent
 	local gradient = button.UIGradient
-	local ts = game:GetService("TweenService") 
+	local ts = game:GetService("TweenService")
 	local ti = TweenInfo.new(1, Enum.EasingStyle.Circular, Enum.EasingDirection.Out)
 	local offset1 = {Offset = Vector2.new(1, 0)}
 	local create = ts:Create(gradient, ti, offset1)
-	local startingPos = Vector2.new(-1, 0) 
+	local startingPos = Vector2.new(-1, 0)
 	local addWait = 0
-	
-	
+
+
 	--//ANIMATIONS:
 	local function animate()
 		create:Play()
@@ -497,13 +494,13 @@ local TweenService = game:GetService("TweenService")
 
 HealthBar.Name = "HealthBar" -- the name of the shitty healthbar
 HealthBar.Parent = player.Character.Head -- the parent of the shitty healthbar
-HealthBar.ExtentsOffset = Vector3.new(0, 3, 0) -- offset do not touch 
+HealthBar.ExtentsOffset = Vector3.new(0, 3, 0) -- offset do not touch
 HealthBar.Size = UDim2.new(4, 0, 2, 0) -- the size
 
 
 
--- this is the container 
-Frame.Parent = HealthBar 
+-- this is the container
+Frame.Parent = HealthBar
 Frame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
 Frame.BackgroundTransparency = 1.000
 Frame.Size = UDim2.new(1, 0, 1, 0)
@@ -531,21 +528,21 @@ PName.Rotation = 5 -- DO NOT FUCK WITH THIS
 
 
 local part = PName -- dont change this either
-        
+
         local Info = TweenInfo.new(
             2,                              --Length (seconds)
             Enum.EasingStyle.Sine,          --Easing Style
             Enum.EasingDirection.InOut,       --Easing Direction
             -1,                             --Times Repeated
             true,                           --reversed
-            0                               --deşau
+            0                               --desau
             )
-            
+
         local Goals = {
             Rotation = -5
         } -- properties
-        
-        local nametween = TweenService:Create(part, Info, Goals) -- shit 
+
+        local nametween = TweenService:Create(part, Info, Goals) -- shit
         nametween:Play() -- dont forget this
 
 --
@@ -669,13 +666,13 @@ Bar_8.Size = UDim2.new(0, 24, 0, 123)
 
 -- Scripts:
 
-local function PIUEA_fake_script() -- vis.LocalScript 
+local function PIUEA_fake_script() -- vis.LocalScript
 	local script = Instance.new('LocalScript', vis)
 
 	local sensitivity = 4 -- backwards (lower = more sensitive)
 	local randomness = 2 -- how randomly it moves
 	local smoothness = 0.07 -- how smoothed the movement it
-	
+
 	wait(4)
 	function update() -- will spawn in the background later
 		for i,v in pairs(script.Parent:GetChildren()) do -- gets all instances in parent
@@ -685,14 +682,14 @@ local function PIUEA_fake_script() -- vis.LocalScript
 					while wait() do -- repeats
 						local voll = sound.PlaybackLoudness / sensitivity
 						v:TweenSize(UDim2.new(0,24,0,voll/math.random(1,randomness)),Enum.EasingDirection.InOut,Enum.EasingStyle.Quad,smoothness)
-						
+
 					end
 				end
 				spawn(updatebar)
 			end
 		end
 	end
-	
+
 	spawn(update)
 end
 coroutine.wrap(PIUEA_fake_script)()
@@ -721,7 +718,7 @@ if isfile and readfile then
 	if isfile("FPS Position X Offset.txt") then
 		XOffset = readfile("FPS Position X Offset.txt")
 	end
-	
+
 	local Position = UDim2.new(0,XOffset,0,YOffset)
 	UI.Main.Position = Position
 end
@@ -737,7 +734,7 @@ local tween = TweenService:Create(UI.Main.Title, transitionInfo, {TextTransparen
 tween:Play()
 
 
-local function MakeDraggable(objecttodragfrom, object) 
+local function MakeDraggable(objecttodragfrom, object)
 	pcall(function()
 		local dragging = false
 		local dragInput, mousePos, framePos
@@ -810,7 +807,7 @@ local function HeartbeatUpdate()
 	FrameUpdateTable[1] = LastIteration
 	local CurrentFPS = (tick() - Start >= 1 and #FrameUpdateTable) or (#FrameUpdateTable / (tick() - Start))
 	CurrentFPS = math.floor(CurrentFPS)
-	
+
 	FPSLabel.Text = tostring(CurrentFPS).." FPS"
 end
 
@@ -872,9 +869,9 @@ for _,v in pairs(game:GetService("ReplicatedStorage").Effects:GetChildren()) do
     weld.C0 = CFrame.new(0,2,0)*CFrame.Angles(0,0,0)
     Aura1.Transparency = 1
     end
-    end 
+    end
 
-    
+
 
 
 --
@@ -893,7 +890,7 @@ local hrp = hum.RootPart
 local playing, completed = Enum.PlaybackState.Playing, Enum.PlaybackState.Completed
 local style, dir = Enum.EasingStyle.Sine, Enum.EasingDirection.InOut
 
-local sin = Instance.new("NumberValue") 
+local sin = Instance.new("NumberValue")
 local isSprinting = Instance.new("BoolValue")
 
 local dur, durSprint = 0.3, 0.3
@@ -904,7 +901,7 @@ local oneTween, oneSprintTween = ts:Create(sin, ti, {Value = 1}), ts:Create(sin,
 
 local offset, maxRandomBounds = 0.8, 0.8
 
-local point0, point2 = Vector3.new(offset, 0, 0), Vector3.new(-offset, 0, 0) 
+local point0, point2 = Vector3.new(offset, 0, 0), Vector3.new(-offset, 0, 0)
 
 local point1 = Vector3.new(0, -offset, 0)
 
@@ -919,62 +916,62 @@ local counter, counterInc = 1, 0.1
 local running = false
 
 local function curve(t, p0, p1, p2)
-	
+
 	if t == 0 then return p0 elseif t == 1 then return p2 end
 
 	return (((1 - t)^2) * p0) + (2 * (1 - t) * t * p1) + (t^2 * p2)
-	
+
 end
 
 local function sprint()
-	
-	if oneTween.PlaybackState ~= playing and isSprinting.Value == false then 
-			
+
+	if oneTween.PlaybackState ~= playing and isSprinting.Value == false then
+
 		oneTween:Play()
-				
+
 	end
-			
+
 	if oneSprintTween.PlaybackState ~= playing and isSprinting.Value == true then
-			
-    
+
+
 		oneSprintTween:Play()
-				
+
 	end
-	
+
 end
-game:GetService("RunService").RenderStepped:Connect(function(deltaTime)	
+game:GetService("RunService").RenderStepped:Connect(function(deltaTime)
 
 	if hum.MoveDirection:Dot(hum.MoveDirection) > 0 then
-	
+
 		if (not running) then begTween:Play() running = true end
 
-		if begTween.PlaybackState == completed then 
-			
+		if begTween.PlaybackState == completed then
+
 			if sin.Value == 0 then
-				
+
 				counter = counter + counterInc
 
 				point1 = Vector3.new(math.clamp(math.noise(counter), -maxRandomBounds, maxRandomBounds), -offset, 0)
-				
-				local coro = coroutine.wrap(sprint) 
+
+				local coro = coroutine.wrap(sprint)
 				coro()
-				
+
 			end
 
 			hum.CameraOffset = curve(sin.Value, point0, point1, point2)
-				
+
 		end
-			
+
 	else
-					
+
 		tweenBack:Play()
 		oneTween:Cancel()
 		oneSprintTween:Cancel()
 		sin.Value = 0
 		running = false
-			
+
 	end
-			
+
 end)
 
 --
@@ -1017,12 +1014,12 @@ if v:FindFirstChild("Humanoid").Health > 0 then
                             local A_2 = v
                             local A_3 =  {
                                 ["Type"] = "Knockback",
-                                ["HitEffect"] = "HeavyHitEffect", 
-                                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.Clashing, 
-                                ["Velocity"] = Vector3.new(0, -1, 0), 
-                                ["HitTime"] = 1, 
-                                ["CombatInv"] = true, 
-                                ["Sound"] = game:GetService("ReplicatedStorage").RogueSounds.BaneDischarge, 
+                                ["HitEffect"] = "HeavyHitEffect",
+                                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.Clashing,
+                                ["Velocity"] = Vector3.new(0, -1, 0),
+                                ["HitTime"] = 1,
+                                ["CombatInv"] = true,
+                                ["Sound"] = game:GetService("ReplicatedStorage").RogueSounds.BaneDischarge,
                                 ["Damage"] = 40
                             }
                             local Event = game:GetService("ReplicatedStorage").Remotes.Damage
@@ -1038,15 +1035,15 @@ if v:FindFirstChild("Humanoid").Health > 0 then
                             local A_1 = getrenv()._G.Pass
                             local A_2 = v
                             local A_3 = {
-                    ["HitTime"] = 1, 
-                    ["Type"] = "Knockback", 
-                    ["HitEffect"] = "KnifeHitEffect", 
-                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+                    ["HitTime"] = 1,
+                    ["Type"] = "Knockback",
+                    ["HitEffect"] = "KnifeHitEffect",
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3,
                     ["Velocity"] = Vector3.new(0, -1, 0),
                     ["CombatInv"] = true,
                     ["Effect"] = "SussyDmg",
                     ["BlockAble"] = false,
-                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit, 
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
                     ["Damage"] = "NaN"
                 }
                             local Event = game:GetService("ReplicatedStorage").Remotes.Damage
@@ -1233,10 +1230,10 @@ function YellowSlashs()
                 [1] = getrenv()._G.Pass,
                 [2] = "KnifeProjectileYellow",
                 [3] = "Spawn",
-                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0), 
+                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0),
                         },
                     }
-                    
+
                     if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
 char = player.Character
@@ -1274,13 +1271,13 @@ function OrangeSlashs()
             [1] = getrenv()._G.Pass,
             [2] = "KnifeProjectileOrange",
             [3] = "Spawn",
-            [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1 + Vector3.new(0,0,0), 
+            [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1 + Vector3.new(0,0,0),
                     },
                 }
                 if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
                 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
-                game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args)) 
+                game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
@@ -1294,7 +1291,7 @@ local args = {
                 [1] = getrenv()._G.Pass,
                 [2] = "KnifeProjectile",
                 [3] = "Spawn",
-                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0), 
+                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0),
                         },
                     }
                     if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
@@ -1316,7 +1313,7 @@ function PurpleSlashs()
                     [1] = getrenv()._G.Pass,
                     [2] = "KnifeProjectilePurple",
                     [3] = "Spawn",
-                    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0), 
+                    [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0),
                             },
                         }
                         if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
@@ -1334,7 +1331,7 @@ function DarkSlashs()
                 [1] = getrenv()._G.Pass,
                 [2] = "KnifeProjectileDarkRed",
                 [3] = "Spawn",
-                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0), 
+                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1000000 + Vector3.new(0,100,0),
                         },
                     }
                     if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
@@ -1669,9 +1666,9 @@ function slashes()
     for i = 1,amm,1 do
     spawn(function()
     local A_1 =  {
-         [1] = pass, 
-         [2] = "KnifeProjectile", 
-         [3] = "Spawn", 
+         [1] = pass,
+         [2] = "KnifeProjectile",
+         [3] = "Spawn",
          [4] = (char.HumanoidRootPart.CFrame*CFrame.new(1,100,-10)).p
     }
     local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
@@ -1693,7 +1690,7 @@ function slashes()
     pp:WaitForChild('Particle'):WaitForChild('ParticleEmitter'):Destroy()
     end
     end)
-    
+
     detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()-- detects if the value is equal to the amount of time the remote is fired
     if val.Value == amm then
     tab2 = {}
@@ -1708,9 +1705,9 @@ function slashes()
     v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,0,0)
             table.insert(tab2,v1)
     end
-    
-    
-    
+
+
+
     for i = 1,#tab2 do
     spawn(function()
     local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
@@ -1744,9 +1741,9 @@ wait(5)
     for i = 1,amm,1 do
     spawn(function()
     local A_1 =  {
-         [1] = pass, 
-         [2] = "KnifeProjectileOrange", 
-         [3] = "Spawn", 
+         [1] = pass,
+         [2] = "KnifeProjectileOrange",
+         [3] = "Spawn",
          [4] = (char.HumanoidRootPart.CFrame*CFrame.new(1,100,-10)).p
     }
     local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
@@ -1768,7 +1765,7 @@ wait(5)
     pp:WaitForChild('Particle'):WaitForChild('ParticleEmitter'):Destroy()
     end
     end)
-    
+
     detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()-- detects if the value is equal to the amount of time the remote is fired
     if val.Value == amm then
     tab2 = {}
@@ -1783,9 +1780,9 @@ wait(5)
     v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,0,0)
             table.insert(tab2,v1)
     end
-    
-    
-    
+
+
+
     for i = 1,#tab2 do
     spawn(function()
     local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
@@ -1819,9 +1816,9 @@ wait(5)
     for i = 1,amm,1 do
     spawn(function()
     local A_1 =  {
-         [1] = pass, 
-         [2] = "KnifeProjectilePurple", 
-         [3] = "Spawn", 
+         [1] = pass,
+         [2] = "KnifeProjectilePurple",
+         [3] = "Spawn",
          [4] = (char.HumanoidRootPart.CFrame*CFrame.new(1,100,-10)).p
     }
     local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
@@ -1843,7 +1840,7 @@ wait(5)
     pp:WaitForChild('Particle'):WaitForChild('ParticleEmitter'):Destroy()
     end
     end)
-    
+
     detect2 = val:GetPropertyChangedSignal("Value"):Connect(function()-- detects if the value is equal to the amount of time the remote is fired
     if val.Value == amm then
     tab2 = {}
@@ -1858,9 +1855,9 @@ wait(5)
     v1.Position = (char.HumanoidRootPart.CFrame).p + Vector3.new(0,0,0)
             table.insert(tab2,v1)
     end
-    
-    
-    
+
+
+
     for i = 1,#tab2 do
     spawn(function()
     local angle = circle / #tab2 * i---this will get the amount of parts you have and multiply with the current i to get the proper postion to make a circle
@@ -1948,7 +1945,7 @@ end)
                 )
 local pass = getrenv()._G.Pass
 
-local debounce = true 
+local debounce = true
 local cooldown = 7
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:Connect(function(k, typing)
@@ -1970,7 +1967,7 @@ mouse.KeyDown:Connect(function(k, typing)
            end)
 
 
-    local debounce = true 
+    local debounce = true
 local CD = 4
 local Cooldown2 = false
 local mouse = game.Players.LocalPlayer:GetMouse()
@@ -1984,17 +1981,17 @@ mouse.KeyDown:Connect(function(k, typing)
         if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
 k:Play()
 end
-        k:AdjustSpeed(0.70) 
+        k:AdjustSpeed(0.70)
         local A_1 = getrenv()._G.Pass
         local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-        local A_3 = 
+        local A_3 =
             {
-                ["HitTime"] = 1, 
-                ["Type"] = "Normal", 
+                ["HitTime"] = 1,
+                ["Type"] = "Normal",
                 ["HitEffect"] = "KnifeHitEffect",
                 ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt1,
                 ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeBurst,
-                ["Velocity"] = Vector3.new(0,-0.1,0), 
+                ["Velocity"] = Vector3.new(0,-0.1,0),
                 ["CombatInv"] = true,
                 ["Damage"] = 10
             }
@@ -2011,7 +2008,7 @@ end
                 [1] = getrenv()._G.Pass,
                 [2] = "KnifeProjectileDarkRed",
                 [3] = "Spawn",
-                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1 + Vector3.new(0,0,0), 
+                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1 + Vector3.new(0,0,0),
                         },
                     }
 
@@ -2021,17 +2018,17 @@ end
                     game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                      game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
 
-                                      
-        
+
+
         end
         end)
 
                     local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "5" and Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil and InAction == false then
         local A_1 =  {
-              [1] = getrenv()._G.Pass, 
-              [2] = "Chatted", 
+              [1] = getrenv()._G.Pass,
+              [2] = "Chatted",
               [3] = "Boring...",
               [4] = Color3.fromRGB(255, 0, 0)
         }
@@ -2039,21 +2036,21 @@ end
         Event:FireServer(A_1)
         local A_1 = getrenv()._G.Pass
         local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-        local A_3 = 
+        local A_3 =
             {
-                ["HitTime"] = 1, 
-                ["Type"] = "Knockback", 
+                ["HitTime"] = 1,
+                ["Type"] = "Knockback",
                 ["HitEffect"] = "KnifeHitEffect",
                 ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
                 ["Sound"] = game:GetService("ReplicatedStorage").RogueSounds.BaneSound,
-                ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0), 
+                ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0),
                 ["CombatInv"] = true,
                 ["Damage"] = 40
             }
         local Event = game:GetService("ReplicatedStorage").Remotes.Damage
                     if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
         Event:InvokeServer(A_1, A_2, A_3)
-            end  
+            end
         wait(0.3)
         char = game.Players.LocalPlayer.Character
         local vel = Instance.new('BodyVelocity',char.HumanoidRootPart)
@@ -2069,14 +2066,14 @@ end
         wait(0.5)
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2086,14 +2083,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2103,14 +2100,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2120,14 +2117,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2137,14 +2134,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2154,14 +2151,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2171,14 +2168,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2188,14 +2185,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2205,14 +2202,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2222,14 +2219,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2239,14 +2236,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2256,14 +2253,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2273,14 +2270,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2290,14 +2287,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2307,14 +2304,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2324,14 +2321,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2341,14 +2338,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2358,14 +2355,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2375,14 +2372,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2392,14 +2389,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2409,14 +2406,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2426,14 +2423,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2443,14 +2440,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2460,14 +2457,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2477,14 +2474,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2494,14 +2491,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2511,14 +2508,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2528,14 +2525,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(1, 1, 1), 
+            ["Velocity"] = Vector3.new(1, 1, 1),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2545,14 +2542,14 @@ end
             end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 0.2, 
-            ["Type"] = "Knockback", 
-            ["HitEffect"] = "KnifeHitEffect",  
-            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,  
+            ["HitTime"] = 0.2,
+            ["Type"] = "Knockback",
+            ["HitEffect"] = "KnifeHitEffect",
+            ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
-            ["Velocity"] = Vector3.new(100, 100, 100), 
+            ["Velocity"] = Vector3.new(100, 100, 100),
             ["CombatInv"] = true,
             ["Damage"] = 5
         }
@@ -2584,7 +2581,7 @@ mouse.KeyDown:Connect(function(k, typing)
 end
 end)
 
- 
+
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:Connect(function(k, typing)
     if typing then return end
@@ -2600,15 +2597,15 @@ end
 	local A_1 = pass
 	local A_2 = target
 	local A_3 = {
-                    ["HitTime"] = 1, 
-                    ["Type"] = "Knockback", 
-                    ["HitEffect"] = "KnifeHitEffect", 
-                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+                    ["HitTime"] = 1,
+                    ["Type"] = "Knockback",
+                    ["HitEffect"] = "KnifeHitEffect",
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3,
                     ["Velocity"] = Vector3.new(0, -1, 0),
                     ["CombatInv"] = true,
                     ["Effect"] = "SussyDmg",
                     ["BlockAble"] = false,
-                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit, 
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
                     ["Damage"] = "NaN"
                 }
 	local Event = game:GetService("ReplicatedStorage").Remotes.Damage
@@ -2636,7 +2633,7 @@ part.Size = Vector3.new(0.1,0.2,0.1)
 part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
 part.Name = "tp"
 wait(5)
-game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20.4143,-141.366,3483.62) 
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20.4143,-141.366,3483.62)
 wait(0.2)
 spawn(function()
         local LockOn = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
@@ -2679,13 +2676,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2708,13 +2705,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2735,13 +2732,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2762,13 +2759,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2789,13 +2786,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2816,13 +2813,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2843,13 +2840,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2870,13 +2867,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2897,13 +2894,13 @@ end
             [1] = getrenv()._G.Pass,
             [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
             [3] = {
-                ["Type"] = "Knockback", 
-                ["HitTime"] = 1, 
-                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround, 
-                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005), 
-                ["HitEffect"] = "LightHitEffect", 
-                ["CombatInv"] = true, 
-                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick, 
+                ["Type"] = "Knockback",
+                ["HitTime"] = 1,
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
+                ["Velocity"] = Vector3.new(0.00100000005, 0.00100000005, 0.00100000005),
+                ["HitEffect"] = "LightHitEffect",
+                ["CombatInv"] = true,
+                ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Kick,
                 ["Damage"] = 40
             }
         }
@@ -2953,14 +2950,14 @@ k:Play()
 end
          local A_1 = getrenv()._G.Pass
         local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-        local A_3 = 
+        local A_3 =
             {
-                ["HitTime"] = 1, 
-                ["Type"] = "Knockback", 
+                ["HitTime"] = 1,
+                ["Type"] = "Knockback",
                 ["HitEffect"] = "KnifeHitEffect",
                 ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
                 ["Sound"] = game:GetService("ReplicatedStorage").RogueSounds.BaneSound,
-                ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0), 
+                ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0),
                 ["CombatInv"] = true,
                 ["Damage"] = 40
             }
@@ -3109,7 +3106,7 @@ local Event = game:GetService("ReplicatedStorage").Remotes.Damage
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "6" and Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil and RageMode == true and InAction == false then
 
  local args = {
@@ -3117,18 +3114,18 @@ local mouse = game.Players.LocalPlayer:GetMouse()
                 [1] = getrenv()._G.Pass,
                 [2] = "KnifeProjectileOrange",
                 [3] = "Spawn",
-                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1 + Vector3.new(0,0,0), 
+                [4] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1 + Vector3.new(0,0,0),
                         },
                     }
 
                     game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                     game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
-                    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args)) 
                     game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                     game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                     game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                     game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
-                    
+                    game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
+
 
 
 end
@@ -3137,10 +3134,10 @@ end)
 
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "7" and Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil and RageMode == true and InAction == false then
-       
- 
+
+
         YellowSlashs()
         OrangeSlashs()
         Slashs()
@@ -3150,7 +3147,7 @@ local mouse = game.Players.LocalPlayer:GetMouse()
  end)
 
  local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "8" and Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil and RageMode == true and InAction == false then
             local Anim = Instance.new("Animation")
             Anim.AnimationId = "rbxassetid://4820780935"
@@ -3161,18 +3158,18 @@ end
             k:AdjustSpeed(1.50)
             local A_1 = getrenv()._G.Pass
             local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-            local A_3 = 
+            local A_3 =
                 {
-                    ["HitTime"] = 1, 
-                    ["Type"] = "Knockback", 
+                    ["HitTime"] = 1,
+                    ["Type"] = "Knockback",
                     ["HitEffect"] = "KnifeHitEffect",
                     ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
                     ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
-                    ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0), 
+                    ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0),
                     ["CombatInv"] = true,
                     ["Damage"] = 20
                 }
-				
+
             local Event = game:GetService("ReplicatedStorage").Remotes.Damage
 			if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
             Event:InvokeServer(A_1, A_2, A_3)
@@ -3210,14 +3207,14 @@ k:Play()
 end
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 1, 
-            ["Type"] = "Normal", 
+            ["HitTime"] = 1,
+            ["Type"] = "Normal",
             ["HitEffect"] = "LightHitEffect",
             ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.GrabbedLeg1,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeSwing,
-            ["Velocity"] = Vector3.new(0, 1, 0) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1, 
+            ["Velocity"] = Vector3.new(0, 1, 0) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1,
             ["CombatInv"] = true,
             ["Damage"] = 3
         }
@@ -3228,14 +3225,14 @@ end
 wait(0.1)
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 1, 
-            ["Type"] = "Normal", 
+            ["HitTime"] = 1,
+            ["Type"] = "Normal",
             ["HitEffect"] = "LightHitEffect",
             ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.GrabbedLeg1,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeSwing2,
-            ["Velocity"] = Vector3.new(0, 0, 2) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1, 
+            ["Velocity"] = Vector3.new(0, 0, 2) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1,
             ["CombatInv"] = true,
             ["Damage"] = 3
         }
@@ -3246,14 +3243,14 @@ wait(0.1)
 wait(0.1)
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 1, 
-            ["Type"] = "Normal", 
+            ["HitTime"] = 1,
+            ["Type"] = "Normal",
             ["HitEffect"] = "LightHitEffect",
             ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.GrabbedLeg1,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeSwing,
-            ["Velocity"] = Vector3.new(0, 0, 3) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1, 
+            ["Velocity"] = Vector3.new(0, 0, 3) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1,
             ["CombatInv"] = true,
             ["Damage"] = 3
         }
@@ -3264,14 +3261,14 @@ wait(0.1)
 wait(0)
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 1, 
-            ["Type"] = "Normal", 
+            ["HitTime"] = 1,
+            ["Type"] = "Normal",
             ["HitEffect"] = "LightHitEffect",
             ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.GrabbedLeg1,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeSwing2,
-            ["Velocity"] = Vector3.new(0, -2, 4) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1, 
+            ["Velocity"] = Vector3.new(0, -2, 4) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1,
             ["CombatInv"] = true,
             ["Damage"] = 3
         }
@@ -3282,14 +3279,14 @@ wait(0)
 wait(0.1)
     local A_1 = getrenv()._G.Pass
     local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-    local A_3 = 
+    local A_3 =
         {
-            ["HitTime"] = 1, 
-            ["Type"] = "Normal", 
+            ["HitTime"] = 1,
+            ["Type"] = "Normal",
             ["HitEffect"] = "LightHitEffect",
             ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.GrabbedLeg1,
             ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeSwing2,
-            ["Velocity"] = Vector3.new(10, -10, 0) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1, 
+            ["Velocity"] = Vector3.new(10, -10, 0) + game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 1,
             ["CombatInv"] = true,
             ["Damage"] = 3
         }
@@ -3301,14 +3298,14 @@ local args = {
 [1] = getrenv()._G.Pass,
 [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
 [3] = {
-    ["HitTime"] = 0.6, 
-    ["Type"] = "Knockback", 
-    ["HitEffect"] = "HeavyHitEffect", 
+    ["HitTime"] = 0.6,
+    ["Type"] = "Knockback",
+    ["HitEffect"] = "HeavyHitEffect",
     ["CombatInv"] = true,
-    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2, 
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
     ["Velocity"] = Vector3.new(0, -100, 0),
     ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
-    ["Damage"] = 3 
+    ["Damage"] = 3
 }
 }
 
@@ -3341,14 +3338,14 @@ local args = {
 [1] = getrenv()._G.Pass,
 [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
 [3] = {
-    ["HitTime"] = 0.6, 
-    ["Type"] = "Knockback", 
-    ["HitEffect"] = "HeavyHitEffect", 
+    ["HitTime"] = 0.6,
+    ["Type"] = "Knockback",
+    ["HitEffect"] = "HeavyHitEffect",
     ["CombatInv"] = true,
-    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2, 
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
     ["Velocity"] = Vector3.new(0, -100, 0),
     ["Sound"] = game:GetService("ReplicatedStorage").Sounds.GroundHit,
-    ["Damage"] = 3 
+    ["Damage"] = 3
 }
 }
 
@@ -3365,9 +3362,9 @@ local args = {
 [1] = getrenv()._G.Pass,
 [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
 [3] = {
-    ["HitTime"] = 0.7, 
-    ["Type"] = "Normal", 
-    ["HitEffect"] = "LightHitEffect", 
+    ["HitTime"] = 0.7,
+    ["Type"] = "Normal",
+    ["HitEffect"] = "LightHitEffect",
     ["CombatInv"] = true,
     ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3,
     ["Velocity"] = Vector3.new(0,-1,0),
@@ -3385,14 +3382,14 @@ local args = {
 [1] = getrenv()._G.Pass,
 [2] = game:service("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value,
 [3] = {
-    ["HitTime"] = 0.6, 
-    ["Type"] = "Knockback", 
-    ["HitEffect"] = "HeavyHitEffect", 
+    ["HitTime"] = 0.6,
+    ["Type"] = "Knockback",
+    ["HitEffect"] = "HeavyHitEffect",
     ["CombatInv"] = true,
-    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2, 
+    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
     ["Velocity"] = Vector3.new(0, -1, 0),
     ["Sound"] = game:GetService("ReplicatedStorage").Sounds.GroundHit,
-    ["Damage"] = 10 
+    ["Damage"] = 10
 }
 }
 
@@ -3433,7 +3430,7 @@ end
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "x" and Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil and RageMode == true and InAction == false then
 			InAction = true
 local player = game.Players.LocalPlayer
@@ -3465,12 +3462,12 @@ local args = {
     [1] = pass,
     [2] = lock.Value,
     [3] = {
-        ["HitTime"] = 1, 
-        ["Type"] = "Knockback", 
+        ["HitTime"] = 1,
+        ["Type"] = "Knockback",
         ["HitEffect"] = "HeavyHitEffect",
-        ["HurtAnimation"] = rep.Animations.HurtAnimations.Knockback2, 
+        ["HurtAnimation"] = rep.Animations.HurtAnimations.Knockback2,
         ["Velocity"] = Vector3.new(0, 11, 0) + rootpart.CFrame.lookVector * 11,
-        ["Sound"] = rep.Sounds.Punch, 
+        ["Sound"] = rep.Sounds.Punch,
         ["Damage"] = 2
     }
 }
@@ -3485,12 +3482,12 @@ wait(0.2)
 char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
 tar = rootpart.CFrame*CFrame.new(0,7,0) + rootpart.CFrame.lookVector * 6
 char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
-v2 = Instance.new('BodyPosition',rootpart) 
+v2 = Instance.new('BodyPosition',rootpart)
 fol = Instance.new('Folder',v2)
-v2.Name = 'Client' 
-v2.MaxForce = Vector3.new(1,1,1)*100000 
-v2.D = 3900 
-v2.P = 60000 
+v2.Name = 'Client'
+v2.MaxForce = Vector3.new(1,1,1)*100000
+v2.D = 3900
+v2.P = 60000
 v2.Position = (tar).p
 
 wait(0.3)
@@ -3510,13 +3507,13 @@ local args = {
     [1] = pass,
     [2] = lock.Value,
     [3] = {
-        ["HitTime"] = 1, 
-        ["Type"] = "Normal", 
+        ["HitTime"] = 1,
+        ["Type"] = "Normal",
         ["CombatInv"] = true,
-        ["BlockAble"] = false, 
+        ["BlockAble"] = false,
         ["HitEffect"] = "BiggerBurstEffect",
-        ["HurtAnimation"] = rep.Animations.HurtAnimations['Hurt'..math.random(1,3)], 
-        ["Velocity"] = rootpart.CFrame.lookVector * 0.2, 
+        ["HurtAnimation"] = rep.Animations.HurtAnimations['Hurt'..math.random(1,3)],
+        ["Velocity"] = rootpart.CFrame.lookVector * 0.2,
         ["Sound"] = rep.Sounds.Punch,
         ["Damage"] = 3
     }
@@ -3543,12 +3540,12 @@ local args = {
     [1] = pass,
     [2] = lock.Value,
     [3] = {
-        ["HitTime"] = 1, 
-        ["Type"] = "Knockback", 
+        ["HitTime"] = 1,
+        ["Type"] = "Knockback",
         ["HitEffect"] = "HeavyHitEffect",
-        ["HurtAnimation"] = rep.Animations.HurtAnimations.Knockback2, 
+        ["HurtAnimation"] = rep.Animations.HurtAnimations.Knockback2,
         ["Velocity"] = rootpart.CFrame.lookVector * 70,
-        ["Sound"] = rep.Sounds.Punch, 
+        ["Sound"] = rep.Sounds.Punch,
         ["Damage"] = 40
     }
 }
@@ -3568,12 +3565,12 @@ if Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
 char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
 tar = rootpart.CFrame*CFrame.new(0,0.1,0)
 char.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
-v2 = Instance.new('BodyPosition',rootpart) 
+v2 = Instance.new('BodyPosition',rootpart)
 fol = Instance.new('Folder',v2)
-v2.Name = 'Client' 
-v2.MaxForce = Vector3.new(1,1,1)*100000 
-v2.D = 1000 
-v2.P = 60000 
+v2.Name = 'Client'
+v2.MaxForce = Vector3.new(1,1,1)*100000
+v2.D = 1000
+v2.P = 60000
 v2.Position = (tar).p
 end
 
@@ -3594,13 +3591,13 @@ local args = {
     [1] = pass,
     [2] = lock.Value,
     [3] = {
-        ["HitTime"] = 1, 
-        ["Type"] = "Knockback", 
+        ["HitTime"] = 1,
+        ["Type"] = "Knockback",
         ["HitEffect"] = "HeavyHitEffect",
         ["CombatInv"] = true,
-        ["HurtAnimation"] = rep.Animations.HurtAnimations.SlideOnGround, 
+        ["HurtAnimation"] = rep.Animations.HurtAnimations.SlideOnGround,
         ["Velocity"] = Vector3.new(0, -20, 0),
-        ["Sound"] = rep.Sounds.Kick, 
+        ["Sound"] = rep.Sounds.Kick,
         ["Damage"] = 20
     }
 }
@@ -3625,14 +3622,14 @@ k:Play()
 end
          local A_1 = getrenv()._G.Pass
         local A_2 = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
-        local A_3 = 
+        local A_3 =
             {
-                ["HitTime"] = 1, 
-                ["Type"] = "Knockback", 
+                ["HitTime"] = 1,
+                ["Type"] = "Knockback",
                 ["HitEffect"] = "KnifeHitEffect",
                 ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.SlideOnGround,
                 ["Sound"] = game:GetService("ReplicatedStorage").RogueSounds.BaneSound,
-                ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0), 
+                ["Velocity"] = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame.lookVector * 0 + Vector3.new(0,70,0),
                 ["CombatInv"] = true,
                 ["Damage"] = 40
             }
@@ -3782,7 +3779,7 @@ local Event = game:GetService("ReplicatedStorage").Remotes.Damage
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "c" and RageMode == true and InAction == false then
  _G.cdr = false
             if _G.cdr then
@@ -3926,7 +3923,7 @@ end
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "v" and RageMode == true and InAction == false then
 _G.cdr = false
 if _G.cdr then return end
@@ -3935,7 +3932,7 @@ pass = getrenv()._G.Pass
 player = game.Players.LocalPlayer
 m = player:GetMouse()
 local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
-if LockOn then 
+if LockOn then
 target = LockOn
 r2 = target.HumanoidRootPart.CFrame
 elseif not LockOn then
@@ -3956,8 +3953,8 @@ for i = 1,amm,1 do
 spawn(function()
 local A_1 =  {
       [1] = pass,
-      [2] = "KnifeProjectilePurple", 
-      [3] = "Spawn", 
+      [2] = "KnifeProjectilePurple",
+      [3] = "Spawn",
       [4] = r2.p
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
@@ -4006,7 +4003,7 @@ wait(.5)
 for i = 1,#tab do
     m.TargetFilter = game.workspace.Terrain
 local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
-if LockOn then 
+if LockOn then
 target = LockOn
 r2 = target.HumanoidRootPart.CFrame
 r1 = target.HumanoidRootPart
@@ -4021,11 +4018,11 @@ tab[i].Position = r2.p + Vector3.new(0,-4,0)
 tab2[i].CFrame = r2*CFrame.new(x,10,z)
 spawn(function()
 local A_1 =  {
-      [1] = pass, 
-      [2] = "KnifeProjectilePurple", 
-      [3] = "Hit", 
-      [4] = tab2[i], 
-      [5] = r2, 
+      [1] = pass,
+      [2] = "KnifeProjectilePurple",
+      [3] = "Hit",
+      [4] = tab2[i],
+      [5] = r2,
       [6] = r1
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
@@ -4044,7 +4041,7 @@ end
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "b" and RageMode == true and InAction == false then
 _G.cdr = false
 if _G.cdr then return end
@@ -4053,7 +4050,7 @@ pass = getrenv()._G.Pass
 player = game.Players.LocalPlayer
 m = player:GetMouse()
 local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
-if LockOn then 
+if LockOn then
 target = LockOn
 r2 = target.HumanoidRootPart.CFrame
 elseif not LockOn then
@@ -4075,7 +4072,7 @@ spawn(function()
 local A_1 =  {
       [1] = pass,
       [2] = "KnifeProjectile",
-      [3] = "Spawn", 
+      [3] = "Spawn",
       [4] = r2.p
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
@@ -4124,7 +4121,7 @@ wait(.5)
 for i = 1,#tab do
     m.TargetFilter = game.workspace.Terrain
 local LockOn = player.Backpack.Main.LockOnScript.LockOn.Value
-if LockOn then 
+if LockOn then
 target = LockOn
 r2 = target.HumanoidRootPart.CFrame
 r1 = target.HumanoidRootPart
@@ -4139,11 +4136,11 @@ tab[i].Position = r2.p + Vector3.new(0,-4,0)
 tab2[i].CFrame = r2*CFrame.new(x,10,z)
 spawn(function()
 local A_1 =  {
-      [1] = pass, 
-      [2] = "KnifeProjectile", 
-      [3] = "Hit", 
-      [4] = tab2[i], 
-      [5] = r2, 
+      [1] = pass,
+      [2] = "KnifeProjectile",
+      [3] = "Hit",
+      [4] = tab2[i],
+      [5] = r2,
       [6] = r1
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
@@ -4162,13 +4159,13 @@ end
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-        mouse.KeyDown:Connect(function(k) 
+        mouse.KeyDown:Connect(function(k)
         if k == "p" then
 if DamageAura == true then
   DamageAura = false
 warn("desactived")
  wait(0.1)
-else 
+else
    DamageAura = true
 warn("Actived")
 wait(0.1)
@@ -4185,7 +4182,7 @@ _G.hidechat = true
 local mt = getrawmetatable(game)
     local backup = mt.__namecall
     if setreadonly then setreadonly(mt, false) else make_writeable(mt, true) end
-    
+
     mt.__namecall = newcclosure(function(...)
         local method = getnamecallmethod()
         local args = {...}
@@ -4198,9 +4195,9 @@ local mt = getrawmetatable(game)
 
 game.Players.LocalPlayer.Chatted:Connect(function(Chat)
 local A_1 =  {
-          [1] = getrenv()._G.Pass, 
-          [2] = "Chatted", 
-          [3] = '[ External ]\n' ..Chat, 
+          [1] = getrenv()._G.Pass,
+          [2] = "Chatted",
+          [3] = '[ External ]\n' ..Chat,
           [4] = Color3.fromRGB(255, 0, 0)
     }
     local Event = game:GetService("ReplicatedStorage").Remotes.Events
@@ -4209,8 +4206,8 @@ end)
 
 function thestart()
     local A_1 =  {
-              [1] = getrenv()._G.Pass, 
-              [2] = "Chatted", 
+              [1] = getrenv()._G.Pass,
+              [2] = "Chatted",
               [3] = [[[ System Message ]
     Aura Enabled ]],
               [4] = Color3.fromRGB(255, 0, 0)
@@ -4220,8 +4217,8 @@ function thestart()
 end
 function theend()
     local A_1 =  {
-              [1] = getrenv()._G.Pass, 
-              [2] = "Chatted", 
+              [1] = getrenv()._G.Pass,
+              [2] = "Chatted",
               [3] = [[[ System Message ]
     Aura Fully Enabled ]],
               [4] = Color3.fromRGB(255, 0, 0)
@@ -4231,8 +4228,8 @@ function theend()
 end
 function turnoff()
     local A_1 =  {
-              [1] = getrenv()._G.Pass, 
-              [2] = "Chatted", 
+              [1] = getrenv()._G.Pass,
+              [2] = "Chatted",
               [3] = [[[ System Message ]
     Aura Disabled ]],
               [4] = Color3.fromRGB(255, 0, 0)
@@ -4293,11 +4290,11 @@ task.spawn(function()
         if breakloops == true then break end
         local function createTrail(duration)
             local part = Instance.new("Part")
-            part.Anchored = true 
+            part.Anchored = true
             part.CanCollide = false
             part.CanTouch = false
             part.CanQuery = false
-            part.Massless = true 
+            part.Massless = true
             part.Position = Player.Character.HumanoidRootPart.Position + Vector3.new(math.random(-5,5),math.random(-5,5),math.random(-5,5))
             part.CFrame = CFrame.lookAt(part.Position, part.Position + Player.Character.HumanoidRootPart.Velocity)
             part.CFrame = part.CFrame * CFrame.new(0,0,math.random(-3,0))
@@ -4333,21 +4330,21 @@ RageActived100 = true
  InAction = true
  Music:Stop()
  Music.SoundId = game.ReplicatedStorage.Resources.Character.CustomMusic.My.TransformedPlaylist["1Bunny"].SoundId
-    
+
     game.Players.LocalPlayer.Backpack.Main.RunSpeed.Value = 0
     game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value = 0
     game.Players.LocalPlayer.Character.Humanoid.HipHeight = 0
-    
-    
+
+
     game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = 0
     game.Players.LocalPlayer.Character.Humanoid.JumpPower = 0
-    
 
-    
+
+
     wait(1)
     local A_1 =  {
-        [1] = getrenv()._G.Pass, 
-        [2] = "Chatted", 
+        [1] = getrenv()._G.Pass,
+        [2] = "Chatted",
         [3] = [[[ External ]
         ... ]],
         [4] = Color3.fromRGB(255, 0, 0)
@@ -4356,8 +4353,8 @@ RageActived100 = true
   Event:FireServer(A_1)
   wait(2)
   local A_1 =  {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Chatted", 
+    [1] = getrenv()._G.Pass,
+    [2] = "Chatted",
     [3] = [[[ External ]
     How do you defeat a creature of hatred? ]],
     [4] = Color3.fromRGB(255, 0, 0)
@@ -4366,8 +4363,8 @@ local Event = game:GetService("ReplicatedStorage").Remotes.Events
 Event:FireServer(A_1)
 wait(4)
 local A_1 =  {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Chatted", 
+    [1] = getrenv()._G.Pass,
+    [2] = "Chatted",
     [3] = [[[ External ]
     That's easy, use love. ]],
     [4] = Color3.fromRGB(255, 0, 0)
@@ -4376,8 +4373,8 @@ local Event = game:GetService("ReplicatedStorage").Remotes.Events
 Event:FireServer(A_1)
 wait(3)
 local A_1 =  {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Chatted", 
+    [1] = getrenv()._G.Pass,
+    [2] = "Chatted",
     [3] = [[[ External ]
     But there are two kinds of LOVE... ]],
     [4] = Color3.fromRGB(255, 0, 0)
@@ -4386,8 +4383,8 @@ local Event = game:GetService("ReplicatedStorage").Remotes.Events
 Event:FireServer(A_1)
 wait(4)
 local A_1 =  {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Chatted", 
+    [1] = getrenv()._G.Pass,
+    [2] = "Chatted",
     [3] = [[[ External ]
     And unfortunately humans can't tell the difference. ]],
     [4] = Color3.fromRGB(255, 0, 0)
@@ -4397,8 +4394,8 @@ Event:FireServer(A_1)
 wait(3)
 if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
 	local A_1 =  {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Chatted", 
+    [1] = getrenv()._G.Pass,
+    [2] = "Chatted",
     [3] = [[[ External ]
     I promise you something, ]]..game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Name,
     [4] = Color3.fromRGB(255, 0, 0)
@@ -4407,8 +4404,8 @@ local Event = game:GetService("ReplicatedStorage").Remotes.Events
 Event:FireServer(A_1)
 else
 	local A_1 =  {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Chatted", 
+    [1] = getrenv()._G.Pass,
+    [2] = "Chatted",
     [3] = [[[ External ]
     I promise you something ]],
     [4] = Color3.fromRGB(255, 0, 0)
@@ -4418,8 +4415,8 @@ Event:FireServer(A_1)
 end
 wait(4)
 local A_1 =  {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Chatted", 
+    [1] = getrenv()._G.Pass,
+    [2] = "Chatted",
     [3] = [[[ External ]
     I will kill you. ]],
     [4] = Color3.fromRGB(255, 0, 0)
@@ -4525,19 +4522,19 @@ for i,v in pairs(projectiles:GetChildren()) do
 if v.Name == "KnifeSlashProjectileOrange" or "Removing" then
     v:WaitForChild("BodyVelocity"):Destroy()
     v:WaitForChild("ParticleEmitter"):Destroy()
-    coroutine.resume(coroutine.create(function() 
+    coroutine.resume(coroutine.create(function()
 
-        
-while 
+
+while
 wait(0.05)
 do
     if _G.closed then
         break
         end
     times = times + 1
-    if 
+    if
     times == 6
-    then 
+    then
     times = 0
     end
     if times == 1 then
@@ -4588,7 +4585,7 @@ LevelUpSound:Play()
 game:GetObjects("rbxassetid://9022611353")[1].Parent = game.Workspace
 game.Workspace.PsychicAura.Name = "aura"
 local cf0 = CFrame.new(0,0,0) * CFrame.Angles(0,0,0)
- 
+
  local AuraThing2 = game.Workspace.aura
 local  SoundEffect = game.ReplicatedStorage.Sounds.DarkAura:Clone()
  SoundEffect.Parent = char.Torso
@@ -4739,14 +4736,14 @@ end))
         	if yes == false and activeAura == false then
             yes = true
             thestart()
-            orbs() 
-            wait(5) 
+            orbs()
+            wait(5)
             slashes()
             theend()
             activeAura = true
             wait(1)
             end
-       
+
         end
              if string.sub(msg,1,10) == ":AuraDis" then
             if yes == true and activeAura == true then
@@ -4755,9 +4752,9 @@ end))
                 removingslashes()
                 activeAura = false
             end
-       
+
         end
-end)  
+end)
 
 
 --//New Idles\\
@@ -4772,7 +4769,7 @@ end)
 coroutine.resume(coroutine.create(function()
 while true do wait()
 if Rage < 100 and RageMode == false then
-    local A_1 = 
+    local A_1 =
         {
             [1] = getrenv()._G.Pass,
             [2] = "KnifeColor",
@@ -4788,9 +4785,9 @@ end
 end))
 
 local v1 = {
-    [1] = getrenv()._G.Pass, 
-    [2] = "Damage", 
-    [3] = math.huge, 
+    [1] = getrenv()._G.Pass,
+    [2] = "Damage",
+    [3] = math.huge,
     [4] = game.Players.LocalPlayer.Character
 }
 local event = game:GetService("ReplicatedStorage").Remotes.Events
@@ -4800,10 +4797,10 @@ event:FireServer(v1)
 
 
 
-local A_1 = 
+local A_1 =
 {
-    [1] = getrenv()._G.Pass, 
-    [2] = "ChangeSetting", 
+    [1] = getrenv()._G.Pass,
+    [2] = "ChangeSetting",
     [3] = "CameraShake",
     [4] = false
 }
@@ -4812,16 +4809,16 @@ Event:InvokeServer(A_1)
 
 
 coroutine.resume(coroutine.create(function()
-    local A_1 = 
+    local A_1 =
         {
             [1] = getrenv()._G.Pass,
-            [2] = "Chatted", 
+            [2] = "Chatted",
             [3] = [[ [ External ] *
--GodMode lock on- ]], 
+-GodMode lock on- ]],
             [4] = Color3.new(1,1,1)
         }
     local Event = game:GetService("ReplicatedStorage").Remotes.Events
-    Event:FireServer(A_1) 
+    Event:FireServer(A_1)
         while wait(1) do
         pcall(function()
             for i, v in pairs(game.Players:GetChildren()) do
