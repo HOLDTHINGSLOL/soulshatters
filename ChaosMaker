@@ -1,3 +1,6 @@
+
+
+
 if getgenv().Morph == true then
 	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 	end
@@ -354,6 +357,107 @@ local A_1 =  {
 end)
 
 --
+
+--//Increase Attack\\
+
+local plr = game.Players.LocalPlayer
+local rep = game.ReplicatedStorage
+local remotes = rep:WaitForChild("Remotes")
+local debris = game:GetService("Debris")
+local tweeninfo = TweenInfo.new
+local taskwait = task.wait
+local taskspawn = task.spawn
+local cf = CFrame.new
+local angles = CFrame.Angles
+local mathrand = math.random
+local mathrad = math.rad
+local vector = Vector3.new
+local pass = getrenv()._G.Pass
+local buffed = 0
+
+
+
+local function increaseAttackFirst(times) -- lmao unpatched
+	for i,v in pairs(plr.Character:GetChildren()) do
+		if v:FindFirstChild("Armor") then
+			v.Armor:Destroy()
+			debris:AddItem(v,0.05)
+			if times >= 20 then
+				buffed = buffed + 1
+			end
+		end
+	end
+	taskwait(0.1)
+	taskspawn(function()
+		for i=1,times or 1 do
+			remotes.FriskMoves:InvokeServer({pass,"EquipArmor","TemmieArmor"})
+			for i,v in pairs(plr.Character:GetChildren()) do
+				if v.Name == "TemmieArmor" and v:FindFirstChild("Armor") then
+					v.Armor:Destroy()
+					--debris:AddItem(v,0.05)
+					if times >= 20 then
+						buffed = buffed + 1
+					end
+					break
+				end
+			end
+		end
+		taskwait(0.1)
+		for i,v in pairs(plr.Character:GetChildren()) do
+			if v:FindFirstChild("Armor") then
+				v.Armor:Destroy()
+				--debris:AddItem(v,0.05)
+				if times >= 20 then
+					buffed = buffed + 1
+				end
+			end
+		end
+		taskwait(0.15)
+		remotes.FriskMoves:InvokeServer({pass,"EquipArmor","TemmieArmor"})
+	end)
+end
+
+
+local function increaseAttack(times) -- lmao unpatched
+	for i,v in pairs(plr.Character:GetChildren()) do
+		if v:FindFirstChild("Armor") then
+			v.Armor:Destroy()
+			debris:AddItem(v,0.05)
+			if times >= 20 then
+				buffed = buffed + 1
+			end
+		end
+	end
+	taskwait(0.1)
+	taskspawn(function()
+		for i=1,times or 1 do
+			remotes.FriskMoves:InvokeServer({pass,"EquipArmor","TemmieArmor"})
+			for i,v in pairs(plr.Character:GetChildren()) do
+				if v.Name == "TemmieArmor" and v:FindFirstChild("Armor") then
+					v.Armor:Destroy()
+					debris:AddItem(v,0.05)
+					if times >= 20 then
+						buffed = buffed + 1
+					end
+					break
+				end
+			end
+		end
+		taskwait(0.1)
+		for i,v in pairs(plr.Character:GetChildren()) do
+			if v:FindFirstChild("Armor") then
+				v.Armor:Destroy()
+				debris:AddItem(v,0.05)
+				if times >= 20 then
+					buffed = buffed + 1
+				end
+			end
+		end
+		taskwait(0.15)
+		remotes.FriskMoves:InvokeServer({pass,"EquipArmor","TemmieArmor"})
+	end)
+end
+
 
 
 --//GodMode\\
@@ -2955,3 +3059,12 @@ end
 end)
 
         SendWarn("Warn!","Chaos Maker Loaded: V3.0",1.5)
+        
+        task.wait(0.5)
+        
+        
+        if getgenv().BuffChaosMaker = true then
+		increaseAttackFirst(1)
+		task.wait(0.5)
+		increaseAttack(40)
+		end
