@@ -355,17 +355,6 @@ end)
 
 --
 
-spawn(function()
-while wait() do
-for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-if v.Name == "LockOn" then
-local weld = v:FindFirstChild("Weld")
-if weld then weld:Destroy() end
-end
-end
-end
-end)
-
 
 --//GodMode\\
 loadstring(game:HttpGet(('https://raw.githubusercontent.com/sixhackre/scriptslol/main/somethinglel')))()
@@ -2950,6 +2939,18 @@ mouse.KeyDown:Connect(function(k, typing)
     if typing then return end
 	if k == "v" and InAction == false then
 hakai()
+end
+end)
+
+
+spawn(function()
+while wait() do
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "LockOn" then
+local weld = v:FindFirstChild("Weld")
+if weld then weld:Destroy() end
+end
+end
 end
 end)
 
