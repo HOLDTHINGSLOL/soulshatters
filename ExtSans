@@ -10,6 +10,13 @@ game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 
 
 
+if getgenv().Morph == true then
+	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+	end
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
+if getgenv().Morph == true then
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+end
 
 
 
@@ -902,6 +909,17 @@ end))
 
 Player.Character.Humanoid:ChangeState(Enum.HumanoidStateType.Flying)
 
+
+spawn(function()
+while wait() do
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+if v.Name == "LockOn" then
+local weld = v:FindFirstChild("Weld")
+if weld then weld:Destroy() end
+end
+end
+end
+end)
 
 
 coroutine.resume(coroutine.create(function()
