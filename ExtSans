@@ -15,7 +15,7 @@ game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 
 --//Spawn\\--
 
-task.wait(0.5)
+task.wait(0.3)
 game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName:Destroy()
 
 
