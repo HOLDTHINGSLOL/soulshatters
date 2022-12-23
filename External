@@ -1,8 +1,4 @@
-getgenv().Morph = true
-getgenv().Visualizer = true
 
-
-game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
 
 if getgenv().Morph == true then
 	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
