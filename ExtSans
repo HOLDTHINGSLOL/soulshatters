@@ -6,9 +6,8 @@ infmana = false --(Dont Make True)
 
 
 
-
 game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
-game.Players.LocalPlayer.CharacterAdded:Wait()
+
 
 
 
@@ -19,12 +18,6 @@ game.Players.LocalPlayer.CharacterAdded:Wait()
 task.wait(0.5)
 game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName:Destroy()
 
-for _, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
-  if v.Name == "LockOn" then
-     v.Parent = game.Workspace
-     warn("Destroyed")
-  end
-end
 
 
 
