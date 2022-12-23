@@ -8,7 +8,6 @@ infmana = false --(Dont Make True)
 
 
 game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
-game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Sans"
 game.Players.LocalPlayer.CharacterAdded:Wait()
 
 
@@ -35,9 +34,9 @@ end
 --//Invencible\\
 game.Players.LocalPlayer.Character:WaitForChild("ForceField"):Destroy()
 local v1 = {
-	[1] = getrenv()._G.Pass, 
-	[2] = "Damage", 
-	[3] = math.huge, 
+	[1] = getrenv()._G.Pass,
+	[2] = "Damage",
+	[3] = math.huge,
 	[4] = game.Players.LocalPlayer.Character
 }
 local event = game:GetService("ReplicatedStorage").Remotes.Events
@@ -54,7 +53,7 @@ end)
 
 --//Locals\\
 
-local Pass = getrenv()._G.Pass 
+local Pass = getrenv()._G.Pass
 local Player = game.Players.LocalPlayer
 local char = Player.Character
 local CurrentCharacter = Player.PlayerData.CurrentCharacter.Value
@@ -76,9 +75,9 @@ end
 end)
 spawn(function()
     local A_1 =  {
-      [1] = pass, 
-      [2] = "Bones", 
-      [3] = "Ground", 
+      [1] = pass,
+      [2] = "Bones",
+      [3] = "Ground",
       [4] = Vector3.new(0,1000000,0)
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.SansMoves
@@ -109,7 +108,7 @@ if v.Name == 'RemoteEvent' then
                 break
                 else
                     spawn(function()
-    --for i,e in pairs(game.Workspace:GetChildren()) do 
+    --for i,e in pairs(game.Workspace:GetChildren()) do
         --if e ~= player.Character and e:FindFirstChild("Humanoid") and e:FindFirstChild("HumanoidRootPart") and e:FindFirstChild("Data") then
             --local vector = (player.Character.HumanoidRootPart.Position - e.HumanoidRootPart.Position)
             --if vector.Magnitude <= 1000 then
@@ -139,7 +138,7 @@ if v.Name == 'RemoteEvent' then
             --end
         --end
         --end
-            
+
 wait()
 end)
                     end
@@ -155,11 +154,11 @@ end
 
 
 
-if ye then    
+if ye then
     for _,v in pairs(pp:GetDescendants()) do
         if v.Name == 'Bone' then
             v:Destroy()
-        end 
+        end
 end end
 end
 
@@ -173,10 +172,10 @@ spawn(function()
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.SansMoves
 Event:InvokeServer(A_1)
-end) 
+end)
 local diff = 0;       local pb
 spawn(function()
-    while _G.sansnocd and char:IsDescendantOf(workspace) do 
+    while _G.sansnocd and char:IsDescendantOf(workspace) do
 pb = tonumber(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())
     wait(.2)
 local pb2 = tonumber(game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValue())
@@ -186,16 +185,16 @@ local pb2 = tonumber(game:GetService("Stats").Network.ServerStatsItem["Data Ping
 end)
 local pp = char.Effects:WaitForChild('MultipleBones');pp.Name = 'nocd'
 spawn(function() pp:WaitForChild('Warning'):Destroy() pp:WaitForChild('Warning'):Destroy() end)
-wait(.5) local bonetab = {} 
+wait(.5) local bonetab = {}
     for _,v in pairs(pp:GetDescendants()) do
         if v:IsA('BasePart') then
 table.insert(bonetab,v)
-        end 
+        end
 end
     for _,v in pairs(game:GetService("Workspace").Map["New Map"]:GetChildren()) do
         if v:IsA('BasePart') then
 table.insert(bonetab,v)
-        end 
+        end
 end
 local num = #bonetab-(#bonetab-limit)
 print(num)
@@ -205,8 +204,8 @@ if v.Name == 'RemoteEvent' then
     spawn(function() local v = v
 while _G.sansnocd and char:IsDescendantOf(workspace) do local manage = 0
     local ea = workspace.ServerEffects.ServerCooldown[player.Name]:GetChildren()
-    local a = 0 
-    for _,v in pairs(ea) do local name = string.lower(v.Name) 
+    local a = 0
+    for _,v in pairs(ea) do local name = string.lower(v.Name)
         if not string.find(name,'slice') and not string.find(name,'spawnbone') then
             a = a + 1
         end end
@@ -407,7 +406,7 @@ for _,v in pairs(game.Players.LocalPlayer.Character.Bone:GetDescendants()) do
         v.Color = ColorSequence.new{ColorSequenceKeypoint.new(0.00, Color3.fromRGB(175, 0, 245)), ColorSequenceKeypoint.new(1.00, Color3.fromRGB(255, 150, 0))}
     end
 end
-  
+
 wait(0.3)
 end))
 
@@ -431,26 +430,26 @@ local BodyParts = {
 }
 
 
-    for i,v in pairs(Player.Character:GetChildren()) do 
+    for i,v in pairs(Player.Character:GetChildren()) do
         if table.find(BodyParts, v.Name) then
             local part = Instance.new("Part")
-            part.Anchored = false 
-            part.CanCollide = false 
-            part.Massless = true 
+            part.Anchored = false
+            part.CanCollide = false
+            part.Massless = true
             part.CFrame = v.CFrame
             part.Size = v.Size + Vector3.new(0.05,0.05,0.05)
             part.Transparency = 0.5
             part.Color = Color3.new(1,0,0)
             part.Name = "Test"
             part.Material = Enum.Material["Neon"]
-            if v.Name == "Head" then 
+            if v.Name == "Head" then
                 local mesh = Instance.new("SpecialMesh")
-                mesh.MeshType = Enum.MeshType.Head 
+                mesh.MeshType = Enum.MeshType.Head
                 mesh.Scale = Vector3.new(2.9, 1.2, 1.2)
                 mesh.Parent = part
             end
-            part.Parent = workspace 
-            
+            part.Parent = workspace
+
         end
     end
 
@@ -625,7 +624,7 @@ local TweenService = game:GetService("TweenService")
 
 HealthBar.Name = "HealthBar" -- the name of the shitty healthbar
 HealthBar.Parent = player.Character.Head -- the parent of the shitty healthbar
-HealthBar.ExtentsOffset = Vector3.new(0, 3, 0) -- offset do not touch 
+HealthBar.ExtentsOffset = Vector3.new(0, 3, 0) -- offset do not touch
 HealthBar.Size = UDim2.new(4, 0, 2, 0) -- the size
 
 
@@ -664,7 +663,7 @@ end))
 
 
 local part = PName -- dont change this either
-        
+
         local Info = TweenInfo.new(
             2,                              --Length (seconds)
             Enum.EasingStyle.Sine,          --Easing Style
@@ -673,12 +672,12 @@ local part = PName -- dont change this either
             true,                           --reversed
             0                               --deÅŸau
             )
-            
+
         local Goals = {
             Rotation = -5
         } -- properties
-        
-        local nametween = TweenService:Create(part, Info, Goals) -- shit 
+
+        local nametween = TweenService:Create(part, Info, Goals) -- shit
         nametween:Play() -- dont forget this
 
 --
@@ -694,7 +693,7 @@ _G.hidechat = true
 local mt = getrawmetatable(game)
     local backup = mt.__namecall
     if setreadonly then setreadonly(mt, false) else make_writeable(mt, true) end
-    
+
     mt.__namecall = newcclosure(function(...)
         local method = getnamecallmethod()
         local args = {...}
@@ -707,9 +706,9 @@ local mt = getrawmetatable(game)
 
 game.Players.LocalPlayer.Chatted:Connect(function(Chat)
 local A_1 =  {
-          [1] = getrenv()._G.Pass, 
-          [2] = "Chatted", 
-          [3] = '[ ExtSans ]\n' ..Chat, 
+          [1] = getrenv()._G.Pass,
+          [2] = "Chatted",
+          [3] = '[ ExtSans ]\n' ..Chat,
           [4] = Color3.fromRGB(255, 0, 0)
     }
     local Event = game:GetService("ReplicatedStorage").Remotes.Events
@@ -816,7 +815,7 @@ end)
 --//Tele Two\\--
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-mouse.KeyDown:Connect(function(k) 
+mouse.KeyDown:Connect(function(k)
 	if k == "2" then
 	    if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Telekinesis Enabled" then
 	   local args = { [1] = { [1] = getrenv()._G.Pass, [2] = "Telekinesis", [3] = "Special", [4] = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
@@ -828,7 +827,7 @@ game:GetService("ReplicatedStorage").Remotes.SansMoves:InvokeServer(unpack(args)
 end)
 
 local mouse = game.Players.LocalPlayer:GetMouse()
-mouse.KeyDown:Connect(function(k) 
+mouse.KeyDown:Connect(function(k)
 	if k == "4" then
 	    if game.Players.LocalPlayer.PlayerGui.SansIndicator.Indicator.Text == "Telekinesis Enabled" then
 	   local args = { [1] = { [1] = getrenv()._G.Pass, [2] = "Telekinesis", [3] = "Special", [4] = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
@@ -865,15 +864,15 @@ end
 	local A_1 = Pass
 	local A_2 = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
 	local A_3 = {
-                    ["HitTime"] = 1, 
-                    ["Type"] = "Knockback", 
-                    ["HitEffect"] = "KnifeHitEffect", 
-                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+                    ["HitTime"] = 1,
+                    ["Type"] = "Knockback",
+                    ["HitEffect"] = "KnifeHitEffect",
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3,
                     ["Velocity"] = Vector3.new(0, -1, 0),
                     ["CombatInv"] = true,
                     ["Effect"] = "SussyDmg",
                     ["BlockAble"] = false,
-                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit, 
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
                     ["Damage"] = "NaN"
                 }
 	local Event = game:GetService("ReplicatedStorage").Remotes.Damage
@@ -888,20 +887,20 @@ end)
 
 coroutine.resume(coroutine.create(function()
 
-game.Players.LocalPlayer.Character.Attacks.ChildAdded:Connect(function(v)  
+game.Players.LocalPlayer.Character.Attacks.ChildAdded:Connect(function(v)
     if v.Name == "GasterBlaster" or v.Name:match("Blaster") then
         if funiblaster then
         v:WaitForChild("RootPart"):Destroy()
         end
      end
 end)
-game.Players.LocalPlayer.Character.Attacks.ChildAdded:Connect(function(v)  
+game.Players.LocalPlayer.Character.Attacks.ChildAdded:Connect(function(v)
     if v.Name == "BigGasterBlaster" or v.Name:match("BigBlaster")  then
         if funiblaster then
         v:WaitForChild("RootPart"):Destroy()
         end
-        
-        
+
+
     end
 end)
 
@@ -912,23 +911,23 @@ end))
 
 
 coroutine.resume(coroutine.create(function()
-		local A_1 = 
+		local A_1 =
 			{
 				[1] = getrenv()._G.Pass,
-				[2] = "Chatted", 
+				[2] = "Chatted",
 				[3] = [[ [ ExtSans ] *
--GodMode lock on- ]], 
+-GodMode lock on- ]],
 				[4] = Color3.new(1,1,1)
 			}
 		local Event = game:GetService("ReplicatedStorage").Remotes.Events
-		Event:FireServer(A_1) 
+		Event:FireServer(A_1)
             while wait(1) do
                 for i, v in pairs(game.Players:GetChildren()) do
                     v.Character.Humanoid.Health = math.huge
                 end
             end
         end))
-		
+
 spawn(function()
 while wait() do
 for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
